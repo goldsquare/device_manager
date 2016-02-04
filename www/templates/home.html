@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-content>
+        <div class="device-list">
+            <h3 class="default-text">device manager</h3>
+            <div class="row">
+                <div class="col-50">
+                    <h4 class="default-text">name</h4>
+                </div>
+                <div class="col-50">
+                    <h4 class="default-text">condition</h4>
+                </div>
+            </div>
+            <div class="device row" ng-repeat="d in devices track by $index" ng-click="change($index)">
+                <div class="col-50">
+                    <h4 class="default-text">{{d.name}}</h4>
+                </div>
+                <div class="col-50">
+                    <condition count="$index" data="d.condition" id="condition{{$index}}">{{d.condition}}</condition>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
